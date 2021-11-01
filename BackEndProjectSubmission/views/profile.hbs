@@ -1,0 +1,59 @@
+<main>
+
+	<h1 class="text-center">{{username}}'s Profile</h1>
+
+	<h3 class="margin-custom">Your Enrolled in Courses</h3>
+
+	<div class="container mt-3">
+
+		<div class="row">
+			<div class="card-deck d-flex justify-content-center">
+				{{#each courses}}
+					<div class="card mb-4">
+						<img
+							class="card-img-top"
+							src="{{imgURL}}"
+							alt="Card image cap"
+							width="400"
+						/>
+						<div class="card-body">
+							<h4 class="card-title">{{title}}</h4>
+						</div>
+						<div class="card-footer">
+							<a href="/course/details/{{id}}"><button
+									type="button"
+									class="btn btn-info"
+								>
+									Details
+								</button></a>
+							<small class="float-right">Date Created:
+								{{createdAt}}</small>
+						</div>
+
+					</div>
+				{{else}}
+					<div class="margin-custom">
+						<div>No courses found!</div>
+						<div>To enroll in a course, select the details button on
+							a course from the home page</div>
+					</div>
+
+				{{/each}}
+			</div>
+		</div>
+
+	</div>
+
+	<div class="margin-custom">
+		<h3 class="text-center">User Information</h3>
+		<ul class="text-center">
+			<li>Username: {{username}}</li>
+			<li>Date Created: {{accountCreatedOn}}</li>
+			{{#if enrolledCourses}}
+				<li>Courses Enrolled In: {{enrolledCourses}}</li>
+			{{else}}
+				<li>Courses Enrolled In: None Yet!</li>
+			{{/if}}
+		</ul>
+	</div>
+</main>

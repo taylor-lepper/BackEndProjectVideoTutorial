@@ -1,0 +1,64 @@
+<main>
+
+	<div>
+		<h1 class="margin-custom">Results</h1>
+
+		<div class="container mt-3">
+
+			<div class="row d-flex justify-content-center">
+
+				<div class="card-deck">
+					{{#each courses}}
+						{{#if isPublic}}
+							<div class="card mb-4">
+								<img
+									class="card-img-top"
+									src="{{imgURL}}"
+									alt="Card image cap"
+									width="600"
+								/>
+								<div class="card-body">
+									<h4 class="card-title">{{title}}</h4>
+								</div>
+								<div class="card-footer">
+									<a href="/course/details/{{id}}"><button
+											type="button"
+											class="btn btn-info"
+										>
+											Details
+										</button></a>
+									<small
+										class="float-right"
+									>{{createdAt}}</small>
+								</div>
+							</div>
+						{{else}}
+							<div class="card mb-4">
+								<img
+									class="card-img-top"
+									src="{{imgURL}}"
+									alt="Card image cap"
+									width="600"
+								/>
+								<div class="card-body">
+									<h4 class="card-title">{{title}}</h4>
+								</div>
+								<div class="card-footer">
+									<p>This course is not public!</p>
+									<small
+										class="float-right"
+									>{{createdAt}}</small>
+								</div>
+							</div>
+						{{/if}}
+
+					{{else}}
+						<h4 class="text-center">No results were found...</h4>
+					{{/each}}
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+</main>

@@ -1,0 +1,68 @@
+<main>
+
+	<div class="jumbotron jumbotron-fluid">
+		<div class="container">
+			<h1 class="display-4">Video Tutorials</h1>
+			<p class="lead">
+				Start Self-Study Today: It'll Change Your Life
+			</p>
+		</div>
+	</div>
+
+	<div>
+		<h1 class="margin-custom">Top Courses</h1>
+		<p class="text-center">Please login to view course details &#x1F600;</p>
+
+		<div class="container mt-3">
+
+			<div class="row d-flex justify-content-center">
+
+				<div class="card-deck">
+					{{#each courses}}
+						{{#if isPublic}}
+							<div class="card mb-4">
+								<img
+									class="card-img-top"
+									src="{{imgURL}}"
+									alt="Card image cap"
+									width="400"
+								/>
+								<div class="card-body">
+									<h4 class="card-title">{{title}}</h4>
+								</div>
+							</div>
+						{{/if}}
+					{{else}}
+						<h4 class="text-center">No courses...</h4>
+					{{/each}}
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+</main>
+
+{{! 	<div class="card mb-4">
+						<img
+							class="card-img-top"
+							src="https://colorlib.com/wp/wp-content/uploads/sites/2/angular-logo.png"
+							alt="Card image cap"
+							width="600"
+						/>
+						<div class="card-body">
+							<h4 class="card-title">Angular</h4>
+						</div>
+					</div> }}
+
+{{! <div class="card mb-4">
+						<img
+							class="card-img-top"
+							src="http://blog.addthiscdn.com/wp-content/uploads/2014/11/addthis-react-flux-javascript-scaling.png"
+							alt="Card image cap"
+							width="600"
+						/>
+						<div class="card-body">
+							<h4 class="card-title">React</h4>
+						</div>
+					</div> }}

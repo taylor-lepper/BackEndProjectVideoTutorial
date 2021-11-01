@@ -1,0 +1,48 @@
+<main>
+
+	<div class="container">
+		<h1 class="my-4">Course title :
+			{{title}}
+		</h1>
+
+		<div class="row">
+
+			<div class="col-md-8">
+				<img class="img-fluid" src="{{imgURL}}" alt="{{title}}" />
+			</div>
+
+			<div class="col-md-4 text-center">
+				<h3 class="my-3">Course Description</h3>
+				<p>{{description}}</p>
+				<h3 class="my-3">Course Creation Date</h3>
+				<p>{{createdAt}}</p>
+				{{#if isCreator}}
+					<a
+						class="btn btn-warning"
+						href="/course/edit/{{id}}"
+					>Edit</a>
+					<a
+						class="btn btn-danger"
+						href="/course/delete/{{id}}"
+					>Delete</a>
+
+				{{else}}
+					{{#if isEnrolled}}
+						<div class="enrolled" style="background-color:green;">
+							You are enrolled in this course!</div>
+						<div class="margin-custom">
+							<a class="btn btn-primary" href="/videos">Videos</a>
+						</div>
+					{{else}}
+						<a href="/course/enroll/{{id}}"><button
+								type="button"
+								class="btn btn-primary"
+							>
+								Enroll
+							</button></a>
+					{{/if}}
+				{{/if}}
+			</div>
+		</div>
+	</div>
+</main>

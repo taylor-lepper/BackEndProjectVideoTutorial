@@ -1,0 +1,58 @@
+
+	<form
+		class="text-center border border-light p-5"
+		action="/register"
+		method="POST"
+	>
+		<div class="form-group">
+			<label for="username">Username</label>
+			<input
+				type="text"
+				class="form-control"
+				placeholder="Username"
+				name="username"
+				minlength="5"
+				value="{{username}}"
+			/>
+		</div>
+		<div class="form-group">
+			<label for="password">Password</label>
+			<input
+				type="password"
+				class="form-control"
+				placeholder="Password"
+				minlength="5"
+				name="password"
+				value="{{password}}"
+			/>
+		</div>
+
+		<div class="form-group">
+			<label for="repeatPassword">Repeat Password</label>
+			<input
+				type="password"
+				class="form-control"
+				placeholder="Repeat-Password"
+				minlength="5"
+				name="repeatPassword"
+				value="{{rePass}}"
+			/>
+		</div>
+
+		<div class="form-group">
+			<label for="date">Current Date</label>
+			<input type="date" name="accountCreatedOn" id="myDate" readonly />
+
+			<script type="text/javascript">
+				function SetDate() { var date = new Date(); var day =
+				date.getDate(); var month = date.getMonth() + 1; var year =
+				date.getFullYear(); if (month < 10) month = "0" + month; if (day
+				< 10) day = "0" + day; var today = year + "-" + month + "-" +
+				day; document.getElementById('myDate').value = today; }
+			</script>
+		</div>
+
+		<button type="submit" class="btn btn-primary">Register</button>
+	</form>
+	<body onload="SetDate();"></body>
+</main>

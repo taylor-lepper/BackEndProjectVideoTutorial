@@ -1,0 +1,89 @@
+<main>
+
+	<h1 class="text-center">Courses</h1>
+	<section>
+		<a href="/course/create" class="btn btn-warning">Create Course</a>
+		<form class="search float-right" action="/search" method="POST">
+			<label>Search: </label>
+			<input type="text" name="search" />
+			<button type="submit" class="btn btn-primary">Search</button>
+		</form>
+	</section>
+
+	<div class="container mt-3">
+
+		<div class="row">
+			<div class="card-deck d-flex justify-content-center">
+				{{#each courses}}
+					{{#if isPublic}}
+						<div class="card mb-4">
+							<img
+								class="card-img-top"
+								src="{{imgURL}}"
+								alt="Card image cap"
+								width="400"
+							/>
+							<div class="card-body">
+								<h4 class="card-title">{{title}}</h4>
+								{{#if isCurrentUser}}
+									<small class="custom">Created by
+										{{creator}}!</small>
+								{{/if}}
+							</div>
+							<div class="card-footer">
+								<a href="/course/details/{{id}}"><button
+										type="button"
+										class="btn btn-info"
+									>
+										Details
+									</button></a>
+								<small class="float-right">{{createdAt}}</small>
+							</div>
+						</div>
+					{{/if}}
+				{{else}}
+					<h3 class="margin-custom">No courses...</h3>
+					<h5 class="text-center">You can create a course with the
+						button above!</h5>
+				{{/each}}
+			</div>
+		</div>
+	</div>
+
+</main>
+
+{{! <div class="card mb-4">
+	<img
+		class="card-img-top"
+		src="https://colorlib.com/wp/wp-content/uploads/sites/2/angular-logo.png"
+		alt="Card image cap"
+		width="600"
+	/>
+	<div class="card-body">
+		<h4 class="card-title">Angular</h4>
+	</div>
+	<div class="card-footer">
+		<a href=""><button type="button" class="btn btn-info">
+				Details
+			</button></a>
+		<small class="float-right">Date...</small>
+	</div>
+</div> }}
+
+{{! <div class="card mb-4">
+					<img
+						class="card-img-top"
+						src="http://blog.addthiscdn.com/wp-content/uploads/2014/11/addthis-react-flux-javascript-scaling.png"
+						alt="Card image cap"
+						width="600"
+					/>
+					<div class="card-body">
+						<h4 class="card-title">React</h4>
+					</div>
+					<div class="card-footer">
+						<a href=""><button type="button" class="btn btn-info">
+								Details
+							</button></a>
+						<small class="float-right">Date...</small>
+					</div>
+				</div> }}
